@@ -3,11 +3,11 @@ import { DesignTheme } from '@/types'
 export const designThemes: DesignTheme[] = [
   {
     id: 'minimalist',
-    name: 'Minimalist Professional',
-    description: 'Clean white background with Green Aqua inspired orange accents. Professional typography and grid layouts.',
+    name: 'Luxury Boutique',
+    description: 'Exclusive aquascaping boutique targeting high-end clientele with bespoke installations, rare materials, and VIP concierge services.',
     colorScheme: {
-      primary: '#DE521D', // Green Aqua orange
-      secondary: '#f8fafc', // Light gray
+      primary: '#f97316', // Orange luxury
+      secondary: '#fef3c7', // Warm amber
       accent: '#0ea5e9', // Sky blue
       background: '#ffffff',
       text: '#1e293b'
@@ -55,14 +55,14 @@ export const designThemes: DesignTheme[] = [
   },
   {
     id: 'business',
-    name: 'Hungarian Business Focus',
-    description: 'Sophisticated corporate aesthetic with partnership-focused messaging.',
+    name: 'Green Aqua Partnership',
+    description: 'Specifically designed to impress Green Aqua as a potential business partner, showcasing our aquascaping expertise and international capabilities.',
     colorScheme: {
-      primary: '#dc2626', // Red
-      secondary: '#059669', // Green (Hungarian flag colors)
-      accent: '#d97706', // Amber
-      background: '#f9fafb',
-      text: '#111827'
+      primary: '#DE521D', // Green Aqua signature orange
+      secondary: '#2563eb', // Professional blue
+      accent: '#059669', // Success green
+      background: '#f8fafc',
+      text: '#1e293b'
     },
     style: 'business'
   },

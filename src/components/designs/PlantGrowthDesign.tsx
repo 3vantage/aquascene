@@ -308,7 +308,10 @@ export function PlantGrowthDesign() {
                         min="0"
                         max="100"
                         value={lightIntensity}
-                        onChange={(e) => setLightIntensity(parseInt(e.target.value))}
+                        onChange={(e) => {
+                          const value = parseInt(e.target.value, 10)
+                          if (!isNaN(value)) setLightIntensity(value)
+                        }}
                         className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider-yellow"
                       />
                     </div>
@@ -324,7 +327,10 @@ export function PlantGrowthDesign() {
                         min="0"
                         max="50"
                         value={co2Level}
-                        onChange={(e) => setCo2Level(parseInt(e.target.value))}
+                        onChange={(e) => {
+                          const value = parseInt(e.target.value, 10)
+                          if (!isNaN(value)) setCo2Level(value)
+                        }}
                         className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider-blue"
                       />
                     </div>
@@ -340,7 +346,10 @@ export function PlantGrowthDesign() {
                         min="0"
                         max="100"
                         value={waterLevel}
-                        onChange={(e) => setWaterLevel(parseInt(e.target.value))}
+                        onChange={(e) => {
+                          const value = parseInt(e.target.value, 10)
+                          if (!isNaN(value)) setWaterLevel(value)
+                        }}
                         className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider-cyan"
                       />
                     </div>

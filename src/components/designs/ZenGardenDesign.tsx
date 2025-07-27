@@ -51,18 +51,37 @@ export function ZenGardenDesign() {
   }, [])
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 min-h-screen text-gray-800 relative overflow-hidden">
+    <div 
+      className="relative min-h-screen text-white overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #0c4a6e 0%, #075985 25%, #0369a1 50%, #0284c7 75%, #0ea5e9 100%)'
+      }}
+    >
+      {/* Aquarium Water Background Effects */}
+      <div className="fixed inset-0 z-0">
+        {/* Water Caustics Animation */}
+        <div className="absolute inset-0 opacity-15">
+          <div className="water-caustics w-full h-full animate-water-flow"></div>
+        </div>
+        
+        {/* Gentle Water Movement */}
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/10 via-transparent to-blue-900/20 water-wave"></div>
+        
+        {/* Deep Water Depth Effect */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-950/40 to-transparent"></div>
+      </div>
       
       {/* Floating Water Particles */}
       <div className="fixed inset-0 pointer-events-none z-10">
         {flowParticles.map(particle => (
           <div
             key={particle.id}
-            className="absolute w-2 h-2 bg-cyan-300/30 rounded-full water-particle"
+            className="absolute w-1 h-1 bg-cyan-300/60 rounded-full animate-pulse"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
-              filter: 'blur(1px)'
+              filter: 'blur(0.5px)',
+              boxShadow: '0 0 4px rgba(103, 232, 249, 0.4)'
             }}
           />
         ))}
@@ -111,21 +130,21 @@ export function ZenGardenDesign() {
               </div>
               
               <h1 className="font-display font-light text-6xl lg:text-7xl mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-gray-600 via-slate-700 to-cyan-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-200 via-white to-cyan-200 bg-clip-text text-transparent">
                   Find Your
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 bg-clip-text text-transparent font-extralight">
+                <span className="bg-gradient-to-r from-cyan-300 via-cyan-100 to-white bg-clip-text text-transparent font-extralight">
                   Flow
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+              <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
                 Create a space of tranquility where water, stone, and life move in perfect harmony. 
                 Every element carefully placed to inspire peace and contemplation.
               </p>
               
-              <div className="text-sm text-gray-500 mb-8 italic">
+              <div className="text-sm text-cyan-200/80 mb-8 italic">
                 Click anywhere to create ripples • {isBreathing ? 'Breathing with you' : 'Click the circle to breathe together'}
               </div>
               
