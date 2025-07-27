@@ -65,5 +65,70 @@ export const designThemes: DesignTheme[] = [
       text: '#111827'
     },
     style: 'business'
+  },
+  {
+    id: 'underwater',
+    name: 'Underwater Ecosystem',
+    description: 'Immersive 3D aquarium experience with swimming fish, floating bubbles, and water caustics effects.',
+    colorScheme: {
+      primary: '#0891b2', // Cyan
+      secondary: '#1e3a8a', // Deep blue
+      accent: '#06b6d4', // Light cyan
+      background: '#0c4a6e',
+      text: '#f0f9ff'
+    },
+    style: 'underwater'
+  },
+  {
+    id: 'timeline',
+    name: 'Aquascaping Timeline',
+    description: 'Interactive step-by-step aquarium creation journey with animated timeline and progress tracking.',
+    colorScheme: {
+      primary: '#2563eb', // Blue
+      secondary: '#1e293b', // Slate
+      accent: '#0ea5e9', // Sky blue
+      background: '#0f172a',
+      text: '#f8fafc'
+    },
+    style: 'timeline'
+  },
+  {
+    id: 'growth',
+    name: 'Plant Growth Simulator',
+    description: 'Living ecosystem with animated plant growth, day/night cycles, and environmental controls.',
+    colorScheme: {
+      primary: '#059669', // Emerald
+      secondary: '#064e3b', // Dark green
+      accent: '#10b981', // Light emerald
+      background: '#022c22',
+      text: '#ecfdf5'
+    },
+    style: 'growth'
+  },
+  {
+    id: 'zen',
+    name: 'Zen Garden Flow',
+    description: 'Meditation-inspired peaceful aquascape with flowing water, ripples, and Japanese aesthetic.',
+    colorScheme: {
+      primary: '#64748b', // Slate
+      secondary: '#f1f5f9', // Light slate
+      accent: '#0ea5e9', // Sky blue
+      background: '#f8fafc',
+      text: '#1e293b'
+    },
+    style: 'zen'
+  },
+  {
+    id: 'workshop',
+    name: 'Aquarium Workshop',
+    description: 'Interactive tank builder with drag-and-drop elements, compatibility checker, and live preview.',
+    colorScheme: {
+      primary: '#1d4ed8', // Blue
+      secondary: '#374151', // Gray
+      accent: '#059669', // Emerald
+      background: '#111827',
+      text: '#f9fafb'
+    },
+    style: 'workshop'
   }
 ]

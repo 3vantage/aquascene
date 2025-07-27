@@ -34,6 +34,16 @@ export function ThemeProvider({ children, currentTheme }: ThemeProviderProps) {
         return 'bg-gray-50 text-gray-900'
       case 'business':
         return 'bg-gray-50 text-gray-900'
+      case 'underwater':
+        return 'bg-gradient-to-b from-blue-900 via-blue-800 to-cyan-900 text-white min-h-screen overflow-hidden'
+      case 'timeline':
+        return 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white min-h-screen'
+      case 'growth':
+        return 'bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white min-h-screen'
+      case 'zen':
+        return 'bg-gradient-to-br from-slate-50 to-stone-100 text-slate-800 min-h-screen'
+      case 'workshop':
+        return 'bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900 text-white min-h-screen'
       default:
         return 'bg-white text-gray-900'
     }

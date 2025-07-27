@@ -22,7 +22,7 @@ export interface DesignTheme {
     background: string
     text: string
   }
-  style: 'minimalist' | 'nature' | 'modern' | 'portfolio' | 'business'
+  style: 'minimalist' | 'nature' | 'modern' | 'portfolio' | 'business' | 'underwater' | 'timeline' | 'growth' | 'zen' | 'workshop'
 }
 
 export interface ContactForm {

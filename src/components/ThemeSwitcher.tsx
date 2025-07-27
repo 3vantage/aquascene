@@ -20,25 +20,44 @@ export function ThemeSwitcher({ currentTheme, onThemeChange }: ThemeSwitcherProp
               <span className="text-white font-bold text-sm">A</span>
             </div>
             <span className="font-display font-semibold text-gray-900">AquaScene</span>
+            <span className="text-xs text-gray-500 hidden sm:block">10 Amazing Designs</span>
           </div>
           
-          <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
-            {designThemes.map((theme) => (
-              <button
-                key={theme.id}
-                onClick={() => onThemeChange(theme.id)}
-                className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-all duration-200",
-                  "hover:bg-white hover:shadow-sm",
-                  currentTheme === theme.id
-                    ? "bg-white text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900"
-                )}
-                title={theme.description}
-              >
-                {theme.name}
-              </button>
-            ))}
+          <div className="flex items-center">
+            <div className="overflow-x-auto scrollbar-hide max-w-2xl">
+              <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1 min-w-max">
+                {designThemes.map((theme) => (
+                  <button
+                    key={theme.id}
+                    onClick={() => onThemeChange(theme.id)}
+                    className={cn(
+                      "px-2 py-1.5 text-xs font-medium rounded-md transition-all duration-200 whitespace-nowrap",
+                      "hover:bg-white hover:shadow-sm",
+                      currentTheme === theme.id
+                        ? "bg-white text-gray-900 shadow-sm"
+                        : "text-gray-600 hover:text-gray-900"
+                    )}
+                    title={theme.description}
+                  >
+                    <span className="hidden sm:inline">{theme.name}</span>
+                    <span className="sm:hidden">{theme.name.split(' ')[0]}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Current Theme Indicator */}
+        <div className="pb-2">
+          <div className="text-center">
+            <span className="text-xs text-gray-500">Current: </span>
+            <span className="text-xs font-medium text-gray-700">
+              {designThemes.find(t => t.id === currentTheme)?.name}
+            </span>
+            <span className="text-xs text-gray-400 ml-2">
+              {designThemes.find(t => t.id === currentTheme)?.description}
+            </span>
           </div>
         </div>
       </div>

@@ -8,6 +8,11 @@ import { ModernDesign } from '@/components/designs/ModernDesign'
 import { NatureDesign } from '@/components/designs/NatureDesign'
 import { PortfolioDesign } from '@/components/designs/PortfolioDesign'
 import { BusinessDesign } from '@/components/designs/BusinessDesign'
+import { UnderwaterEcosystemDesign } from '@/components/designs/UnderwaterEcosystemDesign'
+import { AquascapingTimelineDesign } from '@/components/designs/AquascapingTimelineDesign'
+import { PlantGrowthDesign } from '@/components/designs/PlantGrowthDesign'
+import { ZenGardenDesign } from '@/components/designs/ZenGardenDesign'
+import { AquariumWorkshopDesign } from '@/components/designs/AquariumWorkshopDesign'
 
 export default function HomePage() {
   const [currentTheme, setCurrentTheme] = React.useState('minimalist')
@@ -24,6 +29,16 @@ export default function HomePage() {
         return <PortfolioDesign />
       case 'business':
         return <BusinessDesign />
+      case 'underwater':
+        return <UnderwaterEcosystemDesign />
+      case 'timeline':
+        return <AquascapingTimelineDesign />
+      case 'growth':
+        return <PlantGrowthDesign />
+      case 'zen':
+        return <ZenGardenDesign />
+      case 'workshop':
+        return <AquariumWorkshopDesign />
       default:
         return <MinimalistDesign />
     }

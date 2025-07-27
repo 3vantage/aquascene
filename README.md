@@ -1,10 +1,10 @@
 # AquaScene - Premium Aquascaping Business Card Website
 
-A sophisticated Next.js website showcasing **5 different design themes** for an aquascaping business, built to impress Hungarian partners and demonstrate technical readiness for quick partnership execution.
+A sophisticated Next.js website showcasing **10 spectacular design themes** for an aquascaping business, built to impress Hungarian partners and demonstrate technical readiness for quick partnership execution.
 
 ## 🎨 Design Themes
 
-The website features a **tab switcher** allowing users to experience 5 distinct design approaches:
+The website features a **tab switcher** allowing users to experience **10 spectacular design approaches**:
 
 ### 1. **Minimalist Professional**
 - Clean white background with Green Aqua inspired orange accents (#DE521D)
@@ -35,6 +35,36 @@ The website features a **tab switcher** allowing users to experience 5 distinct 
 - Hungarian flag colors (red/green) with partnership messaging
 - Bilingual support indicators (EN/HU)
 - B2B oriented contact forms and wholesale features
+
+### 6. **Underwater Ecosystem**
+- Immersive 3D aquarium experience with swimming fish animations
+- Floating bubbles and water caustics effects
+- Parallax scrolling with depth layers
+- Realistic underwater lighting and glass aquarium frame
+
+### 7. **Aquascaping Timeline**
+- Interactive step-by-step aquarium creation journey
+- Animated timeline: Empty tank → Soil → Hardscape → Plants → Fish
+- Auto-play time-lapse functionality
+- Progress tracking with aquarium icons
+
+### 8. **Plant Growth Simulator**
+- Living ecosystem with animated plant growth
+- Day/night lighting cycles with color temperature changes
+- CO2 bubble streams and environmental controls
+- Multiple plant specimens at different growth stages
+
+### 9. **Zen Garden Flow**
+- Meditation-inspired peaceful aquascape design
+- Interactive ripple effects and flowing water particles
+- Japanese aesthetic with Ma (negative space) principles
+- Breathing rhythm animations for relaxation
+
+### 10. **Aquarium Workshop**
+- Interactive tank builder with drag-and-drop elements
+- Multiple tank sizes with live preview
+- Compatibility checker and cost calculator
+- Professional workshop interface with save/load functionality
 
 ## 🚀 Features
 
@@ -115,7 +145,7 @@ The website showcases products across these aquascaping categories:
 
 ## 📈 Performance
 
-- **Build Size**: ~111kB first load
+- **Build Size**: ~125kB first load (10 amazing designs)
 - **Static Generation**: Pre-rendered for fast loading
 - **SEO Optimized**: Proper meta tags and structured data
 - **Responsive**: Mobile-first design approach
