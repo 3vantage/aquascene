@@ -82,7 +82,7 @@ export function PlantGrowthDesign() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 relative z-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display font-bold text-6xl lg:text-7xl mb-8">
+          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8">
             <span className="bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 bg-clip-text text-transparent">
               Living
             </span>

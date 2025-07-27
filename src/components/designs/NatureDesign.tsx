@@ -15,24 +15,24 @@ export function NatureDesign() {
           <div className="water-ripple absolute bottom-20 left-1/2 w-56 h-56" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="container mx-auto px-4 py-24 relative z-10">
+        <div className="container mx-auto px-4 py-16 sm:py-20 lg:py-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-display font-bold text-6xl lg:text-7xl mb-8 animate-fade-in">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 animate-fade-in leading-tight">
               <span className="bg-gradient-to-r from-aqua-300 to-cyan-300 bg-clip-text text-transparent">
                 Immerse Yourself
               </span>
               <br />
               <span className="text-white">in Nature</span>
             </h1>
-            <p className="text-2xl text-aqua-100 mb-12 leading-relaxed animate-slide-up">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-aqua-100 mb-8 sm:mb-10 lg:mb-12 leading-relaxed animate-slide-up">
               Creating underwater landscapes that bring the beauty of nature into your space.
               Every aquascape tells a story of harmony between earth, water, and life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-aqua-500 to-cyan-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:from-aqua-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <button className="bg-gradient-to-r from-aqua-500 to-cyan-500 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:from-aqua-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg">
                 Explore Collection
               </button>
-              <button className="border-2 border-aqua-400 text-aqua-200 px-10 py-4 rounded-full font-semibold text-lg hover:bg-aqua-400/10 transition-all">
+              <button className="border-2 border-aqua-400 text-aqua-200 px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-aqua-400/10 transition-all">
                 Watch Process
               </button>
             </div>
@@ -44,18 +44,18 @@ export function NatureDesign() {
       </section>
 
       {/* Ecosystem Section */}
-      <section className="py-24 relative">
+      <section className="py-16 sm:py-20 lg:py-24 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="font-display font-bold text-5xl text-white mb-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 sm:mb-6">
               Nature's Ecosystem
             </h2>
-            <p className="text-xl text-aqua-100 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-aqua-100 max-w-2xl mx-auto">
               Each element plays a vital role in creating a thriving underwater world
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center group">
               <div className="w-20 h-20 bg-gradient-to-br from-aqua-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Leaf className="w-10 h-10 text-white" />
@@ -112,7 +112,7 @@ export function NatureDesign() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredProducts.map((product, index) => (
               <div key={product.id} className={`group ${index % 2 === 0 ? 'lg:mt-8' : ''}`}>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">

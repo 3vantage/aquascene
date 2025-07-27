@@ -129,7 +129,7 @@ export function ZenGardenDesign() {
                 </div>
               </div>
               
-              <h1 className="font-display font-light text-6xl lg:text-7xl mb-8 leading-tight">
+              <h1 className="font-display font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-cyan-200 via-white to-cyan-200 bg-clip-text text-transparent">
                   Find Your
                 </span>
@@ -177,7 +177,7 @@ export function ZenGardenDesign() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {zenProducts.map((product, index) => (
                   <div 
                     key={product.id} 
@@ -290,7 +290,7 @@ export function ZenGardenDesign() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 {[
                   {
                     icon: <Circle className="w-8 h-8" />,

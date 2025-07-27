@@ -152,7 +152,7 @@ export function AquaponicsInnovationDesign() {
               <span className="text-green-700 font-semibold">Sustainable Food Systems</span>
             </div>
             
-            <h1 className="font-display font-bold text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-green-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
                 Aquaponics
               </span>
@@ -354,7 +354,7 @@ export function AquaponicsInnovationDesign() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {caseStudies.map((study, index) => (
               <div key={index} className="bg-gradient-to-br from-white to-green-50 rounded-xl shadow-lg hover:shadow-xl transition-all p-6 border border-green-100">
                 

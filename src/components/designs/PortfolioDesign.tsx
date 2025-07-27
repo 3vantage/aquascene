@@ -113,25 +113,25 @@ export function PortfolioDesign() {
                 <Camera className="w-4 h-4 text-purple-600 mr-2" />
                 <span className="text-purple-700 text-sm font-medium">Award-Winning Portfolio</span>
               </div>
-              <h1 className="font-display font-bold text-5xl lg:text-6xl text-gray-900 mb-6">
+              <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Aquascaping
                 <span className="text-transparent bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text block">
                   Artistry
                 </span>
                 Captured
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Every aquascape tells a story. Through meticulous documentation and artistic photography, 
                 I showcase the journey from concept to completion, sharing techniques and inspiration 
                 with the global aquascaping community.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition-all transform hover:scale-105 shadow-lg">
-                  <Camera className="w-5 h-5 mr-2 inline" />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base">
+                  <Camera className="w-4 h-4 sm:w-5 sm:h-5 mr-2 inline" />
                   View Portfolio
                 </button>
-                <button className="border-2 border-purple-200 text-purple-700 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
-                  <Instagram className="w-5 h-5 mr-2 inline" />
+                <button className="border-2 border-purple-200 text-purple-700 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors text-sm sm:text-base">
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 mr-2 inline" />
                   Follow Journey
                 </button>
               </div>
@@ -377,7 +377,7 @@ export function PortfolioDesign() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all">
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">

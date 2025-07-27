@@ -22,18 +22,18 @@ export function BusinessDesign() {
                   <span className="text-orange-700 text-sm font-medium">Partnership Proposal</span>
                 </div>
                 
-                <h1 className="font-display font-bold text-5xl lg:text-6xl text-gray-900 mb-6">
+                <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-4 sm:mb-6 leading-tight">
                   Partner with
                   <span className="text-primary-500 block" style={{color: '#DE521D'}}>Green Aqua</span>
                   Excellence
                 </h1>
                 
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                   AquaScene brings proven aquascaping expertise, international market reach, and 
                   technical innovation to complement Green Aqua's market leadership in premium aquarium solutions.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   <div className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                     <span className="text-gray-700">ADA Certified</span>
@@ -97,7 +97,7 @@ export function BusinessDesign() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center group">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Globe className="w-8 h-8 text-primary-500" style={{color: '#DE521D'}} />

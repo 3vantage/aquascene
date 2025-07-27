@@ -45,7 +45,7 @@ export function MinimalistDesign() {
                 <span className="text-orange-700 text-sm font-medium">Luxury Aquascaping Boutique</span>
               </div>
               
-              <h1 className="font-display font-light text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight">
+              <h1 className="font-display font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6 sm:mb-8 leading-tight">
                 <span className="font-extralight">Exclusive</span>
                 <br />
                 <span className="bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent font-normal">
@@ -55,12 +55,12 @@ export function MinimalistDesign() {
                 <span className="font-extralight">Artistry</span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed font-light">
                 For discerning clients who demand nothing less than perfection. 
                 We create one-of-a-kind aquatic masterpieces using the world's rarest materials and most innovative techniques.
               </p>
               
-              <div className="grid grid-cols-2 gap-6 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
                 <div className="flex items-center">
                   <Gem className="w-5 h-5 text-orange-500 mr-3" />
                   <span className="text-gray-700 font-medium">Rare Materials Only</span>

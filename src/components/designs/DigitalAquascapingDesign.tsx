@@ -128,7 +128,7 @@ export function DigitalAquascapingDesign() {
               <span className="text-blue-300 font-semibold">Next-Generation Technology</span>
             </div>
             
-            <h1 className="font-display font-bold text-6xl lg:text-7xl mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-transparent">
                 Digital
               </span>

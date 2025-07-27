@@ -15,28 +15,28 @@ export function ModernDesign() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 py-24 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 py-16 sm:py-20 lg:py-24 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <div className="inline-flex items-center bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
                 <Zap className="w-4 h-4 text-blue-400 mr-2" />
                 <span className="text-blue-300 text-sm font-medium">Next-Gen Aquascaping</span>
               </div>
-              <h1 className="font-display font-bold text-6xl lg:text-7xl text-white mb-6">
+              <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 leading-tight">
                 The Future of
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent block">
                   Aquascaping
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                 Advanced e-commerce platform featuring the world's most innovative aquascaping products. 
                 AI-powered recommendations, instant availability, and seamless checkout.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base">
                   Shop Now
                 </button>
-                <button className="border border-gray-600 text-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all">
+                <button className="border border-gray-600 text-gray-300 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all text-sm sm:text-base">
                   View Catalog
                 </button>
               </div>
@@ -58,22 +58,22 @@ export function ModernDesign() {
       {/* Features Bar */}
       <section className="py-8 bg-gray-800 border-y border-gray-700">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <div className="flex items-center justify-center text-center">
-              <Truck className="w-6 h-6 text-green-400 mr-3" />
-              <span className="text-gray-300 font-medium">Free Shipping</span>
+              <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 mr-2 sm:mr-3" />
+              <span className="text-gray-300 font-medium text-sm sm:text-base">Free Shipping</span>
             </div>
             <div className="flex items-center justify-center text-center">
-              <Shield className="w-6 h-6 text-blue-400 mr-3" />
-              <span className="text-gray-300 font-medium">Secure Payment</span>
+              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 mr-2 sm:mr-3" />
+              <span className="text-gray-300 font-medium text-sm sm:text-base">Secure Payment</span>
             </div>
             <div className="flex items-center justify-center text-center">
-              <Star className="w-6 h-6 text-yellow-400 mr-3" />
-              <span className="text-gray-300 font-medium">Premium Quality</span>
+              <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 mr-2 sm:mr-3" />
+              <span className="text-gray-300 font-medium text-sm sm:text-base">Premium Quality</span>
             </div>
             <div className="flex items-center justify-center text-center">
-              <Zap className="w-6 h-6 text-purple-400 mr-3" />
-              <span className="text-gray-300 font-medium">Fast Delivery</span>
+              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 mr-2 sm:mr-3" />
+              <span className="text-gray-300 font-medium text-sm sm:text-base">Fast Delivery</span>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ export function ModernDesign() {
           <div className="mb-12">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div>
-                <h2 className="font-display font-bold text-4xl text-white mb-2">
+                <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-2">
                   Product Catalog
                 </h2>
                 <p className="text-gray-400">
@@ -129,7 +129,7 @@ export function ModernDesign() {
           </div>
           
           {/* Product Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {filteredProducts.map((product) => (
               <div key={product.id} className="group bg-gray-800 rounded-xl overflow-hidden hover:bg-gray-750 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-gray-700 hover:border-gray-600">
                 <div className="relative">
@@ -187,22 +187,22 @@ export function ModernDesign() {
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-r from-gray-800 to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-white mb-2">1000+</div>
-              <div className="text-gray-400">Products Available</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">1000+</div>
+              <div className="text-gray-400 text-sm sm:text-base">Products Available</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">50K+</div>
-              <div className="text-gray-400">Happy Customers</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">50K+</div>
+              <div className="text-gray-400 text-sm sm:text-base">Happy Customers</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-gray-400">Uptime Guarantee</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">99.9%</div>
+              <div className="text-gray-400 text-sm sm:text-base">Uptime Guarantee</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-gray-400">Customer Support</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-gray-400 text-sm sm:text-base">Customer Support</div>
             </div>
           </div>
         </div>
@@ -212,20 +212,20 @@ export function ModernDesign() {
       <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display font-bold text-4xl text-white mb-6">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">
               Stay Updated
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8">
               Get the latest products, deals, and aquascaping tips delivered to your inbox
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 sm:px-6 sm:py-4 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
               />
-              <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all">
+              <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all text-sm sm:text-base">
                 Subscribe
               </button>
             </div>

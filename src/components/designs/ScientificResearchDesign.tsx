@@ -163,7 +163,7 @@ export function ScientificResearchDesign() {
               <span className="text-purple-700 font-semibold">Research Laboratory</span>
             </div>
             
-            <h1 className="font-display font-bold text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
                 Scientific
               </span>
@@ -305,7 +305,7 @@ export function ScientificResearchDesign() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
               {datasets.map((data, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all p-6 border-l-4 border-purple-500">
                   <div className="flex items-center justify-between mb-4">

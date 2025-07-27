@@ -87,7 +87,7 @@ export function UnderwaterEcosystemDesign() {
             className="container mx-auto px-4 text-center"
             style={{ transform: `translateY(${scrollY * 0.5}px)` }}
           >
-            <h1 className="font-display font-bold text-7xl lg:text-8xl mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 leading-tight">
               <span className="underwater-text-glow bg-gradient-to-r from-cyan-200 via-blue-200 to-purple-200 bg-clip-text text-transparent">
                 Dive Into
               </span>
@@ -97,13 +97,13 @@ export function UnderwaterEcosystemDesign() {
               </span>
             </h1>
             
-            <p className="text-2xl text-cyan-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-100 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
               Experience the mesmerizing beauty of underwater life. Create your own 
               aquatic paradise with our premium collection of aquascaping essentials.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-12 py-5 rounded-full font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-2xl underwater-glow">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <button className="group bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-12 lg:py-5 rounded-full font-semibold text-base sm:text-lg hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-2xl underwater-glow">
                 <span className="flex items-center gap-3">
                   <Eye className="w-6 h-6" />
                   Explore Depths

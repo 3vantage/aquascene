@@ -154,7 +154,7 @@ export function BiotopeSpecialistDesign() {
               <span className="text-amber-800 font-semibold">Natural Habitat Recreation</span>
             </div>
             
-            <h1 className="font-display font-bold text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-amber-700 via-green-700 to-cyan-700 bg-clip-text text-transparent">
                 Biotope
               </span>

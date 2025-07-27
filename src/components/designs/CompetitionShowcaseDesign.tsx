@@ -94,7 +94,7 @@ export function CompetitionShowcaseDesign() {
               <span className="text-red-700 font-semibold">World Championship Arena</span>
             </div>
             
-            <h1 className="font-display font-bold text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-red-600 via-yellow-600 to-red-600 bg-clip-text text-transparent">
                 Competition
               </span>
@@ -107,7 +107,7 @@ export function CompetitionShowcaseDesign() {
               and prepare your own entry for international recognition.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Trophy className="w-8 h-8 text-white" />
