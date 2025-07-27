@@ -371,10 +371,15 @@ export function AquariumWorkshopDesign() {
                               min="4"
                               max="20"
                               value={element.width}
-                              onChange={(e) => updateElement(element.id, { 
-                                width: parseInt(e.target.value),
-                                height: element.type === 'fish' ? parseInt(e.target.value) * 0.7 : parseInt(e.target.value)
-                              })}
+                              onChange={(e) => {
+                                const value = parseInt(e.target.value, 10)
+                                if (!isNaN(value)) {
+                                  updateElement(element.id, { 
+                                    width: value,
+                                    height: element.type === 'fish' ? value * 0.7 : value
+                                  })
+                                }
+                              }}
                               className="w-full"
                             />
                           </div>
@@ -385,7 +390,10 @@ export function AquariumWorkshopDesign() {
                               min="0"
                               max="360"
                               value={element.rotation}
-                              onChange={(e) => updateElement(element.id, { rotation: parseInt(e.target.value) })}
+                              onChange={(e) => {
+                                const value = parseInt(e.target.value, 10)
+                                if (!isNaN(value)) updateElement(element.id, { rotation: value })
+                              }}
                               className="w-full"
                             />
                           </div>
@@ -556,7 +564,7 @@ export function AquariumWorkshopDesign() {
               Turn your digital design into reality. We'll help source all the elements and guide your build.
             </p>
             
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"

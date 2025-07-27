@@ -428,7 +428,7 @@ export function CompetitionShowcaseDesign() {
               </div>
             </div>
             
-            <form className="max-w-2xl mx-auto">
+            <form className="max-w-2xl mx-auto" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <input
                   type="text"

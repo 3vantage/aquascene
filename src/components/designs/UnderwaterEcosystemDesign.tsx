@@ -268,7 +268,7 @@ export function UnderwaterEcosystemDesign() {
                 Ready to create your underwater masterpiece? Let's start your aquascaping journey.
               </p>
               
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <input
                     type="text"

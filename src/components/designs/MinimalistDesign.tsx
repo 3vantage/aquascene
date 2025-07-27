@@ -385,7 +385,7 @@ export function MinimalistDesign() {
               
               <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
                 <h3 className="font-semibold text-xl text-white mb-6">Request Private Consultation</h3>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <input
                       type="text"
