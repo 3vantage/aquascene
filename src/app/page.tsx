@@ -1,71 +1,61 @@
 'use client'
 
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import { ThemeSwitcher } from '@/components/ThemeSwitcher'
-import { MinimalistDesign } from '@/components/designs/MinimalistDesign'
-import { ModernDesign } from '@/components/designs/ModernDesign'
-import { NatureDesign } from '@/components/designs/NatureDesign'
-import { PortfolioDesign } from '@/components/designs/PortfolioDesign'
-import { BusinessDesign } from '@/components/designs/BusinessDesign'
-import { UnderwaterEcosystemDesign } from '@/components/designs/UnderwaterEcosystemDesign'
-import { AquascapingTimelineDesign } from '@/components/designs/AquascapingTimelineDesign'
-import { PlantGrowthDesign } from '@/components/designs/PlantGrowthDesign'
-import { ZenGardenDesign } from '@/components/designs/ZenGardenDesign'
-import { AquariumWorkshopDesign } from '@/components/designs/AquariumWorkshopDesign'
-import { CompetitionShowcaseDesign } from '@/components/designs/CompetitionShowcaseDesign'
-import { ScientificResearchDesign } from '@/components/designs/ScientificResearchDesign'
-import { BiotopeSpecialistDesign } from '@/components/designs/BiotopeSpecialistDesign'
-import { AquaponicsInnovationDesign } from '@/components/designs/AquaponicsInnovationDesign'
-import { DigitalAquascapingDesign } from '@/components/designs/DigitalAquascapingDesign'
+import { Navigation } from '@/components/Navigation'
+import { PageTransition } from '@/components/ui/AnimatedContainer'
+import { designThemes } from '@/data/themes'
+import { useTheme } from '@/hooks/useTheme'
+
+// Lazy load design components for better performance
+const designComponents = {
+  minimalist: dynamic(() => import('@/components/designs/MinimalistDesign').then(mod => ({ default: mod.MinimalistDesign })), { loading: () => <DesignLoader /> }),
+  modern: dynamic(() => import('@/components/designs/ModernDesign').then(mod => ({ default: mod.ModernDesign })), { loading: () => <DesignLoader /> }),
+  nature: dynamic(() => import('@/components/designs/NatureDesign').then(mod => ({ default: mod.NatureDesign })), { loading: () => <DesignLoader /> }),
+  portfolio: dynamic(() => import('@/components/designs/PortfolioDesign').then(mod => ({ default: mod.PortfolioDesign })), { loading: () => <DesignLoader /> }),
+  business: dynamic(() => import('@/components/designs/BusinessDesign').then(mod => ({ default: mod.BusinessDesign })), { loading: () => <DesignLoader /> }),
+  underwater: dynamic(() => import('@/components/designs/UnderwaterEcosystemDesign').then(mod => ({ default: mod.UnderwaterEcosystemDesign })), { loading: () => <DesignLoader /> }),
+  timeline: dynamic(() => import('@/components/designs/AquascapingTimelineDesign').then(mod => ({ default: mod.AquascapingTimelineDesign })), { loading: () => <DesignLoader /> }),
+  growth: dynamic(() => import('@/components/designs/PlantGrowthDesign').then(mod => ({ default: mod.PlantGrowthDesign })), { loading: () => <DesignLoader /> }),
+  zen: dynamic(() => import('@/components/designs/ZenGardenDesign').then(mod => ({ default: mod.ZenGardenDesign })), { loading: () => <DesignLoader /> }),
+  workshop: dynamic(() => import('@/components/designs/AquariumWorkshopDesign').then(mod => ({ default: mod.AquariumWorkshopDesign })), { loading: () => <DesignLoader /> }),
+  competition: dynamic(() => import('@/components/designs/CompetitionShowcaseDesign').then(mod => ({ default: mod.CompetitionShowcaseDesign })), { loading: () => <DesignLoader /> }),
+  scientific: dynamic(() => import('@/components/designs/ScientificResearchDesign').then(mod => ({ default: mod.ScientificResearchDesign })), { loading: () => <DesignLoader /> }),
+  biotope: dynamic(() => import('@/components/designs/BiotopeSpecialistDesign').then(mod => ({ default: mod.BiotopeSpecialistDesign })), { loading: () => <DesignLoader /> }),
+  aquaponics: dynamic(() => import('@/components/designs/AquaponicsInnovationDesign').then(mod => ({ default: mod.AquaponicsInnovationDesign })), { loading: () => <DesignLoader /> }),
+  digital: dynamic(() => import('@/components/designs/DigitalAquascapingDesign').then(mod => ({ default: mod.DigitalAquascapingDesign })), { loading: () => <DesignLoader /> }),
+}
+
+// Loading component
+function DesignLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-gray-200 border-t-gray-600 rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading theme...</p>
+      </div>
+    </div>
+  )
+}
 
 export default function HomePage() {
-  const [currentTheme, setCurrentTheme] = React.useState('minimalist')
+  const { currentTheme, switchTheme } = useTheme()
   
-  const renderDesign = () => {
-    switch (currentTheme) {
-      case 'minimalist':
-        return <MinimalistDesign />
-      case 'modern':
-        return <ModernDesign />
-      case 'nature':
-        return <NatureDesign />
-      case 'portfolio':
-        return <PortfolioDesign />
-      case 'business':
-        return <BusinessDesign />
-      case 'underwater':
-        return <UnderwaterEcosystemDesign />
-      case 'timeline':
-        return <AquascapingTimelineDesign />
-      case 'growth':
-        return <PlantGrowthDesign />
-      case 'zen':
-        return <ZenGardenDesign />
-      case 'workshop':
-        return <AquariumWorkshopDesign />
-      case 'competition':
-        return <CompetitionShowcaseDesign />
-      case 'scientific':
-        return <ScientificResearchDesign />
-      case 'biotope':
-        return <BiotopeSpecialistDesign />
-      case 'aquaponics':
-        return <AquaponicsInnovationDesign />
-      case 'digital':
-        return <DigitalAquascapingDesign />
-      default:
-        return <MinimalistDesign />
-    }
-  }
+  const DesignComponent = designComponents[currentTheme as keyof typeof designComponents] || designComponents.minimalist
   
   return (
     <ThemeProvider currentTheme={currentTheme}>
-      <ThemeSwitcher 
+      <Navigation 
         currentTheme={currentTheme} 
-        onThemeChange={setCurrentTheme} 
+        onThemeChange={switchTheme}
+        themes={designThemes}
       />
-      {renderDesign()}
+      <PageTransition id={currentTheme}>
+        <Suspense fallback={<DesignLoader />}>
+          <DesignComponent />
+        </Suspense>
+      </PageTransition>
     </ThemeProvider>
   )
 }
