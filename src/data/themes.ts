@@ -130,5 +130,70 @@ export const designThemes: DesignTheme[] = [
       text: '#f9fafb'
     },
     style: 'workshop'
+  },
+  {
+    id: 'competition',
+    name: 'Competition Showcase',
+    description: 'Professional contest-ready layouts featuring award-winning designs, judging criteria, and championship galleries.',
+    colorScheme: {
+      primary: '#dc2626', // Red
+      secondary: '#fbbf24', // Gold
+      accent: '#1f2937', // Dark gray
+      background: '#ffffff',
+      text: '#111827'
+    },
+    style: 'competition'
+  },
+  {
+    id: 'scientific',
+    name: 'Scientific Research',
+    description: 'Data-driven aquascaping with pH monitoring, growth analytics, species documentation, and research methodologies.',
+    colorScheme: {
+      primary: '#7c3aed', // Purple
+      secondary: '#e5e7eb', // Light gray
+      accent: '#10b981', // Emerald
+      background: '#f9fafb',
+      text: '#374151'
+    },
+    style: 'scientific'
+  },
+  {
+    id: 'biotope',
+    name: 'Biotope Specialist',
+    description: 'Authentic natural habitat recreation with region-specific species, environmental parameters, and ecosystem balance.',
+    colorScheme: {
+      primary: '#92400e', // Brown
+      secondary: '#065f46', // Dark green
+      accent: '#0891b2', // Cyan
+      background: '#f0fdf4',
+      text: '#1f2937'
+    },
+    style: 'biotope'
+  },
+  {
+    id: 'aquaponics',
+    name: 'Aquaponics Innovation',
+    description: 'Sustainable food production systems combining aquaculture with hydroponics for modern urban farming solutions.',
+    colorScheme: {
+      primary: '#16a34a', // Green
+      secondary: '#0369a1', // Blue
+      accent: '#ca8a04', // Yellow
+      background: '#ffffff',
+      text: '#1f2937'
+    },
+    style: 'aquaponics'
+  },
+  {
+    id: 'digital',
+    name: 'Digital Aquascaping',
+    description: 'Cutting-edge technology integration with IoT sensors, AI monitoring, virtual reality planning, and smart automation.',
+    colorScheme: {
+      primary: '#3b82f6', // Blue
+      secondary: '#1f2937', // Dark gray
+      accent: '#10b981', // Emerald
+      background: '#0f172a',
+      text: '#f1f5f9'
+    },
+    style: 'digital'
   }
 ]

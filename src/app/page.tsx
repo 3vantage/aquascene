@@ -13,6 +13,11 @@ import { AquascapingTimelineDesign } from '@/components/designs/AquascapingTimel
 import { PlantGrowthDesign } from '@/components/designs/PlantGrowthDesign'
 import { ZenGardenDesign } from '@/components/designs/ZenGardenDesign'
 import { AquariumWorkshopDesign } from '@/components/designs/AquariumWorkshopDesign'
+import { CompetitionShowcaseDesign } from '@/components/designs/CompetitionShowcaseDesign'
+import { ScientificResearchDesign } from '@/components/designs/ScientificResearchDesign'
+import { BiotopeSpecialistDesign } from '@/components/designs/BiotopeSpecialistDesign'
+import { AquaponicsInnovationDesign } from '@/components/designs/AquaponicsInnovationDesign'
+import { DigitalAquascapingDesign } from '@/components/designs/DigitalAquascapingDesign'
 
 export default function HomePage() {
   const [currentTheme, setCurrentTheme] = React.useState('minimalist')
@@ -39,6 +44,16 @@ export default function HomePage() {
         return <ZenGardenDesign />
       case 'workshop':
         return <AquariumWorkshopDesign />
+      case 'competition':
+        return <CompetitionShowcaseDesign />
+      case 'scientific':
+        return <ScientificResearchDesign />
+      case 'biotope':
+        return <BiotopeSpecialistDesign />
+      case 'aquaponics':
+        return <AquaponicsInnovationDesign />
+      case 'digital':
+        return <DigitalAquascapingDesign />
       default:
         return <MinimalistDesign />
     }
