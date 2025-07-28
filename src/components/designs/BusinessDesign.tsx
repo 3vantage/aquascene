@@ -1,5 +1,6 @@
 import React from 'react'
 import { products } from '@/data/products'
+import { HeroAssetImage, AquariumAssetImage } from '@/components/AssetImage'
 import { 
   Award, Globe, Users, Zap, ArrowRight, CheckCircle, 
   Target, Handshake, TrendingUp, Star, Mail, Phone, MapPin,
@@ -63,14 +64,18 @@ export function BusinessDesign() {
               </div>
               
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-orange-200/50 to-blue-200/50 flex flex-col items-center justify-center p-8">
+                <div className="aspect-square rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
+                  <HeroAssetImage 
+                    themeId="business"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-200/70 to-blue-200/70 flex flex-col items-center justify-center p-8">
                     <div className="text-center">
-                      <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#DE521D'}}>
+                      <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm bg-opacity-90" style={{backgroundColor: '#DE521D'}}>
                         <Award className="w-10 h-10 text-white" />
                       </div>
-                      <h3 className="font-bold text-xl text-gray-800 mb-2">Partnership Ready</h3>
-                      <p className="text-gray-600">Complete business proposal & technical capabilities</p>
+                      <h3 className="font-bold text-xl text-white mb-2 drop-shadow-lg">Partnership Ready</h3>
+                      <p className="text-white/90 drop-shadow-md">Complete business proposal & technical capabilities</p>
                     </div>
                   </div>
                 </div>
@@ -294,12 +299,18 @@ export function BusinessDesign() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <div className="aspect-square bg-gradient-to-br from-orange-100 to-blue-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3" style={{backgroundColor: '#DE521D'}}>
-                      <Package className="w-8 h-8 text-white" />
+                <div className="aspect-square relative overflow-hidden">
+                  <AquariumAssetImage 
+                    themeId="business"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-100/70 to-blue-100/70 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3 backdrop-blur-sm bg-opacity-90" style={{backgroundColor: '#DE521D'}}>
+                        <Package className="w-8 h-8 text-white" />
+                      </div>
+                      <span className="text-white font-medium drop-shadow-md">{product.category.toUpperCase()}</span>
                     </div>
-                    <span className="text-gray-600 font-medium">{product.category.toUpperCase()}</span>
                   </div>
                 </div>
                 <div className="p-6">

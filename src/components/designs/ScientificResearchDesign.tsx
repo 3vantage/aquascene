@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { products } from '@/data/products'
+import { ProductAssetImage } from '@/components/AssetImage'
 import { 
   Microscope, BarChart3, FlaskConical, BookOpen, 
   TrendingUp, Database, Atom, Beaker, LineChart,
@@ -482,8 +483,11 @@ export function ScientificResearchDesign() {
             {equipment.map((item, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center text-white">
-                    <Beaker className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-xl overflow-hidden">
+                    <ProductAssetImage 
+                      themeId="research"
+                      className="w-full h-full"
+                    />
                   </div>
                   <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">
                     Research Grade

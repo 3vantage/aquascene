@@ -1,5 +1,7 @@
 import React from 'react'
 import { products } from '@/data/products'
+import { AquariumAssetImage, ProductAssetImage } from '@/components/AssetImage'
+import { TimelapseAssetVideo } from '@/components/AssetVideo'
 import { Camera, Instagram, Play, Calendar, MapPin, Eye, Heart, Share2, ChevronLeft, ChevronRight, Award, Users, Clock, ArrowRight } from 'lucide-react'
 
 export function PortfolioDesign() {
@@ -137,13 +139,15 @@ export function PortfolioDesign() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-purple-100 to-cyan-100 rounded-3xl overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center relative">
-                  <div className="absolute inset-6 bg-white rounded-2xl shadow-2xl flex items-center justify-center">
-                    <Play className="w-16 h-16 text-purple-500" />
-                  </div>
-                  <span className="absolute bottom-4 left-6 text-gray-600 font-medium">Featured Time-lapse</span>
+              <div className="aspect-square rounded-3xl overflow-hidden">
+                <TimelapseAssetVideo 
+                  themeId="portfolio"
+                  className="w-full h-full"
+                />
+                <div className="absolute inset-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center">
+                  <Play className="w-16 h-16 text-white drop-shadow-lg" />
                 </div>
+                <span className="absolute bottom-4 left-6 text-white font-medium drop-shadow-lg">Featured Time-lapse</span>
               </div>
               <div className="absolute -top-4 -right-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-4 shadow-xl">
                 <Award className="w-8 h-8 text-white" />
@@ -200,8 +204,14 @@ export function PortfolioDesign() {
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Project Images */}
                 <div className="relative">
-                  <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                    <span className="text-gray-500 font-medium">Before/After Showcase</span>
+                  <div className="aspect-video relative overflow-hidden">
+                    <AquariumAssetImage 
+                      themeId="portfolio"
+                      className="w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-cyan-900/30 flex items-center justify-center">
+                      <span className="text-white font-medium drop-shadow-lg">Before/After Showcase</span>
+                    </div>
                   </div>
                   <div className="absolute inset-4 flex justify-between items-end">
                     <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
@@ -337,8 +347,14 @@ export function PortfolioDesign() {
           <div className="grid md:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <span className="text-gray-500 font-medium">{post.category}</span>
+                <div className="aspect-video relative overflow-hidden">
+                  <AquariumAssetImage 
+                    themeId="portfolio"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-cyan-900/40 flex items-center justify-center">
+                    <span className="text-white font-medium drop-shadow-lg">{post.category}</span>
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -380,8 +396,14 @@ export function PortfolioDesign() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all">
-                <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-                  <span className="text-gray-500">{product.category.toUpperCase()}</span>
+                <div className="aspect-square relative overflow-hidden">
+                  <ProductAssetImage 
+                    themeId="portfolio"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-cyan-900/30 flex items-center justify-center">
+                    <span className="text-white font-medium drop-shadow-lg">{product.category.toUpperCase()}</span>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div className="p-4">

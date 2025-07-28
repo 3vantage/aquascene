@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { products } from '@/data/products'
+import { HeroAssetImage, ProductAssetImage } from '@/components/AssetImage'
 import { 
   Monitor, Cpu, Wifi, Smartphone, Camera, 
   Activity, Zap, BarChart3, Cloud, Settings,
@@ -433,19 +434,24 @@ export function DigitalAquascapingDesign() {
                   </span>
                 </div>
                 
-                <div className="aspect-square bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <Wifi className="w-8 h-8 text-white" />
+                <div className="aspect-square relative overflow-hidden">
+                  <ProductAssetImage 
+                    themeId="digital"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 to-purple-500/60 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg backdrop-blur-sm bg-opacity-90">
+                        <Wifi className="w-8 h-8 text-white" />
+                      </div>
+                      <span className="text-white font-medium text-sm uppercase tracking-wider drop-shadow-lg">
+                        {product.category}
+                      </span>
                     </div>
-                    <span className="text-blue-300 font-medium text-sm uppercase tracking-wider">
-                      {product.category}
-                    </span>
                   </div>
                   
                   {/* Tech overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent transform -skew-x-12 animate-pulse"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent transform -skew-x-12 animate-pulse"></div>
                 </div>
                 
                 <div className="p-6">

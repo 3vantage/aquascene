@@ -1,5 +1,6 @@
 import React from 'react'
 import { products } from '@/data/products'
+import { HeroAssetImage, ProductAssetImage } from '@/components/AssetImage'
 import { ShoppingCart, Heart, Filter, Search, Star, Zap, Shield, Truck } from 'lucide-react'
 
 export function ModernDesign() {
@@ -42,9 +43,13 @@ export function ModernDesign() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl overflow-hidden backdrop-blur-sm border border-gray-700">
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-400 text-lg font-medium">Interactive 3D Showcase</span>
+              <div className="aspect-square rounded-2xl overflow-hidden backdrop-blur-sm border border-gray-700">
+                <HeroAssetImage 
+                  themeId="modern"
+                  className="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                  <span className="text-white text-lg font-medium drop-shadow-lg">Interactive 3D Showcase</span>
                 </div>
               </div>
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center">
@@ -133,8 +138,14 @@ export function ModernDesign() {
             {filteredProducts.map((product) => (
               <div key={product.id} className="group bg-gray-800 rounded-xl overflow-hidden hover:bg-gray-750 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-gray-700 hover:border-gray-600">
                 <div className="relative">
-                  <div className="aspect-square bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                    <span className="text-gray-500 font-medium">{product.category.toUpperCase()}</span>
+                  <div className="aspect-square relative overflow-hidden">
+                    <ProductAssetImage 
+                      themeId="modern"
+                      className="w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 to-gray-700/60 flex items-center justify-center">
+                      <span className="text-gray-200 font-medium">{product.category.toUpperCase()}</span>
+                    </div>
                   </div>
                   <div className="absolute top-3 right-3 flex space-x-2">
                     <button className="w-8 h-8 bg-gray-900/80 rounded-full flex items-center justify-center hover:bg-red-500 transition-colors">

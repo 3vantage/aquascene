@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { products } from '@/data/products'
+import { PlantAssetImage } from '@/components/AssetImage'
 import { Waves, Circle, Heart, Wind, Leaf, MoreHorizontal } from 'lucide-react'
 
 export function ZenGardenDesign() {
@@ -192,8 +193,12 @@ export function ZenGardenDesign() {
                       </div>
                       
                       {/* Product Visual */}
-                      <div className="relative aspect-square bg-gradient-to-br from-gray-100 to-cyan-100 flex items-center justify-center overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-cyan-200/20"></div>
+                      <div className="relative aspect-square overflow-hidden">
+                        <PlantAssetImage 
+                          themeId="zen"
+                          className="w-full h-full"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-100/60 via-white/40 to-cyan-100/60"></div>
                         
                         <div className="relative z-10 text-center">
                           {product.category === 'plant' && (

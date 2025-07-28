@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { products } from '@/data/products'
+import { PlantAssetImage } from '@/components/AssetImage'
+import { ImmersiveAssetVideo } from '@/components/AssetVideo'
 import { Sun, Moon, Droplets, Zap, Thermometer, Eye, Clock, Play, Pause } from 'lucide-react'
 
 interface PlantStage {
@@ -167,7 +169,12 @@ export function PlantGrowthDesign() {
               
               {/* Aquarium Simulation */}
               <div className="lg:col-span-2">
-                <div className="aspect-video relative bg-gradient-to-b from-cyan-900/50 to-blue-900/80 rounded-2xl overflow-hidden border-4 border-gray-600 shadow-2xl">
+                <div className="aspect-video relative rounded-2xl overflow-hidden border-4 border-gray-600 shadow-2xl">
+                  {/* Background Asset Video */}
+                  <ImmersiveAssetVideo 
+                    themeId="plant-growth"
+                    className="absolute inset-0 w-full h-full"
+                  />
                   
                   {/* Water with lighting effect */}
                   <div className={`absolute inset-0 bg-gradient-to-b ${isDay ? 'from-cyan-300/20 to-blue-600/40' : 'from-blue-900/40 to-indigo-900/60'} transition-all duration-2000`}>

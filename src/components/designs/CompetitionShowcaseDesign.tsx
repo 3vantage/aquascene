@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { products } from '@/data/products'
+import { ProductAssetImage } from '@/components/AssetImage'
 import { 
   Trophy, Medal, Star, Award, Users, Clock, 
   Eye, Target, ChevronRight, Crown, Zap, Camera
@@ -368,15 +369,20 @@ export function CompetitionShowcaseDesign() {
                   </span>
                 </div>
                 
-                <div className="aspect-square bg-gradient-to-br from-red-100 to-yellow-100 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-200/30 to-transparent"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <Trophy className="w-8 h-8 text-white" />
+                <div className="aspect-square relative overflow-hidden">
+                  <ProductAssetImage 
+                    themeId="competition"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-200/60 to-yellow-200/60 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg backdrop-blur-sm bg-opacity-90">
+                        <Trophy className="w-8 h-8 text-white" />
+                      </div>
+                      <span className="text-white font-medium text-sm uppercase tracking-wider drop-shadow-lg">
+                        {product.category}
+                      </span>
                     </div>
-                    <span className="text-red-700 font-medium text-sm uppercase tracking-wider">
-                      {product.category}
-                    </span>
                   </div>
                 </div>
                 

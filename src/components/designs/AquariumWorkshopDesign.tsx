@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { products } from '@/data/products'
+import { ProductAssetImage } from '@/components/AssetImage'
 import { useDebouncedCallback } from '@/hooks/useDebounce'
 import { TankSizeSelector } from '@/components/workshop/TankSizeSelector'
 import { ProductLibrary } from '@/components/workshop/ProductLibrary'

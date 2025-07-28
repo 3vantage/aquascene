@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { products } from '@/data/products'
+import { TimelapseAssetVideo } from '@/components/AssetVideo'
+import { AquariumAssetImage } from '@/components/AssetImage'
 import { Play, ArrowRight, CheckCircle, Clock, Droplets, Leaf, Fish, Mountain } from 'lucide-react'
 
 interface TimelineStep {
@@ -282,7 +284,13 @@ export function AquascapingTimelineDesign() {
               <div className="relative">
                 <div className="aspect-square max-w-md mx-auto relative">
                   {/* Tank Frame */}
-                  <div className="absolute inset-0 border-8 border-gray-600 rounded-lg bg-gradient-to-b from-blue-900/30 to-blue-800/50 overflow-hidden">
+                  <div className="absolute inset-0 border-8 border-gray-600 rounded-lg overflow-hidden">
+                    {/* Background Asset */}
+                    <AquariumAssetImage 
+                      themeId="timeline"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 to-blue-800/60"></div>
                     
                     {/* Substrate Layer */}
                     {currentStep >= 1 && (

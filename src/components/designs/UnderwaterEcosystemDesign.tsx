@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { products } from '@/data/products'
+import { ImmersiveAssetVideo } from '@/components/AssetVideo'
+import { ProductAssetImage } from '@/components/AssetImage'
 import { Fish, Waves, Droplets, Eye, ShoppingCart } from 'lucide-react'
 
 export function UnderwaterEcosystemDesign() {
