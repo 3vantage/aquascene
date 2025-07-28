@@ -1,14 +1,24 @@
 import React from 'react'
 import { products } from '@/data/products'
+import { ImmersiveAssetVideo } from '@/components/AssetVideo'
 import { Waves, Fish, Leaf, Droplets } from 'lucide-react'
 
 export function NatureDesign() {
   const featuredProducts = products.filter(p => p.featured)
   
   return (
-    <div className="pt-20 bg-gradient-to-br from-ocean-900 via-ocean-800 to-aqua-900 min-h-screen text-white">
+    <div className="pt-20 relative min-h-screen text-white overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <ImmersiveAssetVideo 
+          themeId="nature"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-ocean-900/70 via-ocean-800/60 to-aqua-900/70"></div>
+      </div>
+      
       {/* Hero Section with Water Effects */}
-      <section className="relative overflow-hidden">
+      <section className="relative z-10 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="water-ripple absolute top-20 left-1/4 w-64 h-64"></div>
           <div className="water-ripple absolute top-40 right-1/3 w-48 h-48" style={{animationDelay: '1s'}}></div>

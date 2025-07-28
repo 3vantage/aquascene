@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { products } from '@/data/products'
+import { HeroAssetImage, AquariumAssetImage, ProductAssetImage } from '@/components/AssetImage'
 import { 
   Crown, Star, Mail, Phone, MapPin, Gem, Award, 
   Shield, Clock, Eye, Palette, Users, ArrowRight 
@@ -90,14 +91,19 @@ export function MinimalistDesign() {
             </div>
             
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-100 rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-orange-200/30 to-amber-200/30 flex flex-col items-center justify-center p-8">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl relative">
+                <HeroAssetImage 
+                  themeId="minimalist"
+                  className="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-transparent to-amber-500/30"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
                   <div className="text-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl backdrop-blur-sm bg-opacity-90">
                       <Palette className="w-12 h-12 text-white" />
                     </div>
-                    <h3 className="font-bold text-2xl text-gray-800 mb-3">Bespoke Creations</h3>
-                    <p className="text-gray-600 font-light">Every piece uniquely crafted for your space</p>
+                    <h3 className="font-bold text-2xl text-white mb-3 drop-shadow-lg">Bespoke Creations</h3>
+                    <p className="text-white/90 font-light drop-shadow-md">Every piece uniquely crafted for your space</p>
                     
                     <div className="mt-8 grid grid-cols-3 gap-3">
                       {[...Array(6)].map((_, i) => (
@@ -108,7 +114,7 @@ export function MinimalistDesign() {
                           i === 3 ? 'bg-gradient-to-br from-purple-400 to-pink-500' :
                           i === 4 ? 'bg-gradient-to-br from-red-400 to-rose-500' :
                           'bg-gradient-to-br from-gray-400 to-slate-500'
-                        } shadow-md animate-pulse`} style={{animationDelay: `${i * 0.2}s`}} />
+                        } shadow-lg animate-pulse backdrop-blur-sm bg-opacity-80`} style={{animationDelay: `${i * 0.2}s`}} />
                       ))}
                     </div>
                   </div>
@@ -159,15 +165,19 @@ export function MinimalistDesign() {
                     </span>
                   </div>
                   
-                  {/* Visual Header */}
-                  <div className="aspect-video bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-100 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/40 to-transparent"></div>
+                  {/* Visual Header with Real Assets */}
+                  <div className="relative">
+                    <AquariumAssetImage 
+                      themeId="minimalist"
+                      className="aspect-video"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/60 to-transparent"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className={`w-20 h-20 rounded-full flex items-center justify-center ${
                         index === 0 ? 'bg-gradient-to-br from-purple-500 to-indigo-500' :
                         index === 1 ? 'bg-gradient-to-br from-orange-500 to-amber-500' :
                         'bg-gradient-to-br from-emerald-500 to-teal-500'
-                      } shadow-xl group-hover:scale-110 transition-transform duration-500`}>
+                      } shadow-xl group-hover:scale-110 transition-transform duration-500 backdrop-blur-sm bg-opacity-90`}>
                         {index === 0 ? <Eye className="w-10 h-10 text-white" /> :
                          index === 1 ? <Gem className="w-10 h-10 text-white" /> :
                          <Shield className="w-10 h-10 text-white" />}
