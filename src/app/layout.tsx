@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 
@@ -13,12 +13,16 @@ const poppins = Poppins({
   variable: '--font-poppins'
 })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   title: 'AquaScene - Premium Aquascaping Solutions',
   description: 'Professional aquascaping business offering premium aquarium design, maintenance, and aquatic products. Partner with us for exceptional aquatic experiences.',
   keywords: 'aquascaping, aquarium design, aquatic plants, fish tank, aquarium maintenance, Green Aqua',
   authors: [{ name: 'AquaScene Team' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'AquaScene - Premium Aquascaping Solutions',

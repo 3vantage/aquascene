@@ -161,7 +161,7 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
                           currentTheme === theme.id ? 'bg-gray-100 ring-2 ring-cyan-200' : ''
                         }`}
                         role="menuitem"
-                        aria-selected={currentTheme === theme.id}
+                        aria-current={currentTheme === theme.id ? 'true' : undefined}
                         tabIndex={isThemeMenuOpen ? 0 : -1}
                         data-theme-id={theme.id}
                       >

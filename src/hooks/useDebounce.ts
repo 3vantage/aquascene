@@ -7,6 +7,7 @@ export function useDebounce<T extends (...args: any[]) => any>(
   const timeoutRef = useRef<NodeJS.Timeout>()
   const isExecutingRef = useRef(false)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   return useCallback(
     ((...args: Parameters<T>) => {
       // Prevent execution if already executing
@@ -43,6 +44,7 @@ export function useThrottle<T extends (...args: any[]) => any>(
   const lastCallRef = useRef<number>(0)
   const timeoutRef = useRef<NodeJS.Timeout>()
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   return useCallback(
     ((...args: Parameters<T>) => {
       const now = Date.now()
