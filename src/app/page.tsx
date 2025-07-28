@@ -58,7 +58,7 @@ export default function HomePage() {
       <ThemeProvider currentTheme={currentTheme}>
         <AccessibilityProvider currentTheme={currentTheme}>
           <AquaticEffects 
-            intensity="medium" 
+            intensity="low" 
             theme={currentTheme.includes('nature') ? 'teal' : currentTheme.includes('modern') ? 'blue' : 'cyan'}
           >
             <Navigation 

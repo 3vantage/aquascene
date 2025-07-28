@@ -51,6 +51,8 @@ export function MobileOnboardingTour() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -63,6 +65,8 @@ export function MobileOnboardingTour() {
 
   useEffect(() => {
     // Check if user has seen the tour before
+    if (typeof window === 'undefined') return
+    
     const hasSeenTour = localStorage.getItem('aquascape-tour-completed')
     if (!hasSeenTour) {
       // Delay to ensure page is loaded
@@ -86,7 +90,9 @@ export function MobileOnboardingTour() {
 
   const completeTour = () => {
     setIsOpen(false)
-    localStorage.setItem('aquascape-tour-completed', 'true')
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('aquascape-tour-completed', 'true')
+    }
   }
 
   if (!isOpen) return null

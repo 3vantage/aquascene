@@ -32,6 +32,9 @@ export function AquaticEffects({
 
   // Canvas-based caustic light effect
   useEffect(() => {
+    // Skip animation during build/SSR
+    if (typeof window === 'undefined') return
+    
     const canvas = canvasRef.current
     if (!canvas) return
 
