@@ -11,10 +11,10 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const variants = {
-  primary: 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg',
-  secondary: 'border-2 border-gray-300 text-gray-700 hover:bg-gray-50',
-  ghost: 'text-gray-600 hover:text-gray-900 hover:bg-gray-100',
-  danger: 'bg-red-500 text-white hover:bg-red-600 shadow-lg'
+  primary: 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg focus:ring-cyan-500',
+  secondary: 'border-2 border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
+  ghost: 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:ring-gray-500',
+  danger: 'bg-red-500 text-white hover:bg-red-600 shadow-lg focus:ring-red-500'
 }
 
 const sizes = {
@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          'rounded-full font-semibold transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100',
+          'rounded-full font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 touch-manipulation select-none',
           variants[variant],
           sizes[size],
           fullWidth && 'w-full',

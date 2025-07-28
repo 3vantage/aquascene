@@ -3,10 +3,16 @@
 import React, { lazy, Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { AccessibilityProvider } from '@/components/AccessibilityProvider'
 import { Navigation } from '@/components/Navigation'
+import { MobileOnboardingTour } from '@/components/MobileOnboardingTour'
 import { PageTransition } from '@/components/ui/AnimatedContainer'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { AquaticEffects } from '@/components/effects/AquaticEffects'
+import { SwipeIndicator } from '@/components/SwipeIndicator'
 import { designThemes } from '@/data/themes'
 import { useTheme } from '@/hooks/useTheme'
+import { useThemeSwipeGestures } from '@/hooks/useSwipeGestures'
 
 // Lazy load design components for better performance
 const designComponents = {
@@ -27,35 +33,62 @@ const designComponents = {
   digital: dynamic(() => import('@/components/designs/DigitalAquascapingDesign').then(mod => ({ default: mod.DigitalAquascapingDesign })), { loading: () => <DesignLoader /> }),
 }
 
+// Import the aquascape loader
+import { AquascapeLoader } from '@/components/ui/SkeletonLoader'
+
 // Loading component
 function DesignLoader() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <div className="w-16 h-16 border-4 border-gray-200 border-t-gray-600 rounded-full animate-spin mx-auto mb-4"></div>
-        <p className="text-gray-600">Loading theme...</p>
-      </div>
-    </div>
-  )
+  return <AquascapeLoader theme="cyan" />
 }
 
 export default function HomePage() {
   const { currentTheme, switchTheme } = useTheme()
   
+  const themeIds = designThemes.map(theme => theme.id)
+  const { isTouch, currentIndex, totalThemes, nextTheme, previousTheme } = useThemeSwipeGestures(
+    themeIds,
+    currentTheme,
+    switchTheme
+  )
+  
   const DesignComponent = designComponents[currentTheme as keyof typeof designComponents] || designComponents.minimalist
   
   return (
-    <ThemeProvider currentTheme={currentTheme}>
-      <Navigation 
-        currentTheme={currentTheme} 
-        onThemeChange={switchTheme}
-        themes={designThemes}
-      />
-      <PageTransition id={currentTheme}>
-        <Suspense fallback={<DesignLoader />}>
-          <DesignComponent />
-        </Suspense>
-      </PageTransition>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider currentTheme={currentTheme}>
+        <AccessibilityProvider currentTheme={currentTheme}>
+          <AquaticEffects 
+            intensity="medium" 
+            theme={currentTheme.includes('nature') ? 'teal' : currentTheme.includes('modern') ? 'blue' : 'cyan'}
+          >
+            <Navigation 
+              currentTheme={currentTheme} 
+              onThemeChange={switchTheme}
+              themes={designThemes}
+            />
+            <main id="main-content" role="main">
+              <PageTransition id={currentTheme}>
+                <ErrorBoundary>
+                  <Suspense fallback={<DesignLoader />}>
+                    <DesignComponent />
+                  </Suspense>
+                </ErrorBoundary>
+              </PageTransition>
+            </main>
+            <ErrorBoundary>
+              <MobileOnboardingTour />
+            </ErrorBoundary>
+            
+            <SwipeIndicator
+              currentIndex={currentIndex}
+              totalThemes={totalThemes}
+              isTouch={isTouch}
+              onNext={nextTheme}
+              onPrevious={previousTheme}
+            />
+          </AquaticEffects>
+        </AccessibilityProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   )
 }

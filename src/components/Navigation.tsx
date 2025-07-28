@@ -35,6 +35,44 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  // Keyboard navigation for dropdown
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isThemeMenuOpen) return
+
+      switch (event.key) {
+        case 'Escape':
+          setIsThemeMenuOpen(false)
+          break
+        case 'ArrowDown':
+          event.preventDefault()
+          // Focus next menu item
+          const currentIndex = themes.findIndex(t => t.id === currentTheme)
+          const nextIndex = (currentIndex + 1) % themes.length
+          const nextButton = document.querySelector(`[data-theme-id="${themes[nextIndex].id}"]`) as HTMLElement
+          nextButton?.focus()
+          break
+        case 'ArrowUp':
+          event.preventDefault()
+          // Focus previous menu item
+          const prevCurrentIndex = themes.findIndex(t => t.id === currentTheme)
+          const prevIndex = prevCurrentIndex === 0 ? themes.length - 1 : prevCurrentIndex - 1
+          const prevButton = document.querySelector(`[data-theme-id="${themes[prevIndex].id}"]`) as HTMLElement
+          prevButton?.focus()
+          break
+        case 'Enter':
+        case ' ':
+          event.preventDefault()
+          const focusedElement = document.activeElement as HTMLElement
+          focusedElement?.click()
+          break
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isThemeMenuOpen, themes, currentTheme])
+
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Shop', href: '/shop' },
@@ -44,13 +82,24 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
   ]
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      {/* Skip Navigation Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[60] bg-white text-gray-900 px-4 py-2 rounded-md shadow-lg font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500"
+      >
+        Skip to main content
+      </a>
+      
+      <nav 
+        role="navigation"
+        aria-label="Main navigation"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+            : 'bg-transparent'
+        }`}
+      >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
@@ -80,11 +129,13 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
             <div className="relative">
               <button
                 onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-2"
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                 aria-label="Change theme"
                 aria-expanded={isThemeMenuOpen}
+                aria-haspopup="true"
+                id="theme-menu-button"
               >
-                <Sun className="w-4 h-4" />
+                <Sun className="w-4 h-4" aria-hidden="true" />
                 Theme
               </button>
               
@@ -94,17 +145,25 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
                     className="fixed inset-0 z-40" 
                     onClick={() => setIsThemeMenuOpen(false)}
                   />
-                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50 max-h-96 overflow-y-auto">
-                    {themes.map((theme) => (
+                  <div 
+                    className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50 max-h-96 overflow-y-auto"
+                    role="menu"
+                    aria-labelledby="theme-menu-button"
+                  >
+                    {themes.map((theme, index) => (
                       <button
                         key={theme.id}
                         onClick={() => {
                           onThemeChange(theme.id)
                           setIsThemeMenuOpen(false)
                         }}
-                        className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors ${
-                          currentTheme === theme.id ? 'bg-gray-100' : ''
+                        className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors rounded-md mx-1 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:bg-gray-50 ${
+                          currentTheme === theme.id ? 'bg-gray-100 ring-2 ring-cyan-200' : ''
                         }`}
+                        role="menuitem"
+                        aria-selected={currentTheme === theme.id}
+                        tabIndex={isThemeMenuOpen ? 0 : -1}
+                        data-theme-id={theme.id}
                       >
                         <div className="font-medium text-gray-900">{theme.name}</div>
                         <div className="text-xs text-gray-500 mt-1">{theme.description}</div>
@@ -209,5 +268,6 @@ export function Navigation({ currentTheme, onThemeChange, themes }: NavigationPr
         </div>
       </div>
     </nav>
+    </>
   )
 }

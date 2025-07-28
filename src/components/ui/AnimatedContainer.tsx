@@ -100,12 +100,33 @@ export function PageTransition({ children, id }: PageTransitionProps) {
     <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={id}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
+        initial={{ 
+          opacity: 0, 
+          scale: 0.98,
+          filter: 'blur(4px)',
+          rotateX: 10
+        }}
+        animate={{ 
+          opacity: 1, 
+          scale: 1,
+          filter: 'blur(0px)',
+          rotateX: 0
+        }}
+        exit={{ 
+          opacity: 0, 
+          scale: 1.02,
+          filter: 'blur(4px)',
+          rotateX: -10
+        }}
         transition={{
-          duration: 0.3,
-          ease: 'easeInOut'
+          duration: 0.6,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          opacity: { duration: 0.4 },
+          filter: { duration: 0.3 }
+        }}
+        style={{
+          transformPerspective: 1000,
+          transformStyle: 'preserve-3d'
         }}
       >
         {children}
