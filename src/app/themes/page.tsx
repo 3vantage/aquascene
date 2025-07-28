@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Palette, ArrowLeft, Award, Globe, Eye, Star } from 'lucide-react'
 import { designThemes } from '@/data/themes'
 import { useTheme } from '@/hooks/useTheme'
-import { ThemeShowcaseGallery } from '@/components/ThemeShowcaseGallery'
+import { LazyThemeShowcaseGallery } from '@/components/LazyThemeShowcaseGallery'
 import { BeforeAfterGallery } from '@/components/BeforeAfterGallery'
 
 export default function ThemesPage() {
@@ -114,7 +114,7 @@ export default function ThemesPage() {
         </div>
 
         {/* Theme Showcase Gallery */}
-        <ThemeShowcaseGallery 
+        <LazyThemeShowcaseGallery 
           variant="light" 
           highlightGreenAqua={true}
           showDetails={true}
