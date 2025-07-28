@@ -7,9 +7,10 @@ import { AccessibilityProvider } from '@/components/AccessibilityProvider'
 import { Navigation } from '@/components/Navigation'
 import { MobileOnboardingTour } from '@/components/MobileOnboardingTour'
 import { PageTransition } from '@/components/ui/AnimatedContainer'
-import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { ShowcaseErrorBoundary } from '@/components/ErrorBoundary'
 import { AquaticEffects } from '@/components/effects/AquaticEffects'
 import { SwipeIndicator } from '@/components/SwipeIndicator'
+import { HungarianLocalization } from '@/components/HungarianLocalization'
 import { designThemes } from '@/data/themes'
 import { useTheme } from '@/hooks/useTheme'
 import { useThemeSwipeGestures } from '@/hooks/useSwipeGestures'
@@ -54,7 +55,7 @@ export default function HomePage() {
   const DesignComponent = designComponents[currentTheme as keyof typeof designComponents] || designComponents.minimalist
   
   return (
-    <ErrorBoundary>
+    <ShowcaseErrorBoundary>
       <ThemeProvider currentTheme={currentTheme}>
         <AccessibilityProvider currentTheme={currentTheme}>
           <AquaticEffects 
@@ -68,16 +69,16 @@ export default function HomePage() {
             />
             <main id="main-content" role="main">
               <PageTransition id={currentTheme}>
-                <ErrorBoundary>
+                <ShowcaseErrorBoundary>
                   <Suspense fallback={<DesignLoader />}>
                     <DesignComponent />
                   </Suspense>
-                </ErrorBoundary>
+                </ShowcaseErrorBoundary>
               </PageTransition>
             </main>
-            <ErrorBoundary>
+            <ShowcaseErrorBoundary>
               <MobileOnboardingTour />
-            </ErrorBoundary>
+            </ShowcaseErrorBoundary>
             
             <SwipeIndicator
               currentIndex={currentIndex}
@@ -86,9 +87,15 @@ export default function HomePage() {
               onNext={nextTheme}
               onPrevious={previousTheme}
             />
+            
+            {/* Hungarian Localization for Green Aqua Partnership */}
+            <HungarianLocalization 
+              variant="floating" 
+              showGreenAquaMessage={true}
+            />
           </AquaticEffects>
         </AccessibilityProvider>
       </ThemeProvider>
-    </ErrorBoundary>
+    </ShowcaseErrorBoundary>
   )
 }

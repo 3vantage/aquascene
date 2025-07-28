@@ -1,11 +1,32 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Mail, ArrowLeft, Phone, MapPin, Clock, Award, Users } from 'lucide-react'
+import { Mail, ArrowLeft, Phone, MapPin, Clock, Award, Users, Monitor, Smartphone } from 'lucide-react'
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm'
+import { MobileOptimizedContactForm } from '@/components/MobileOptimizedContactForm'
 
 export default function ContactPage() {
+  const [isMobile, setIsMobile] = useState(false)
+  const [showMobileForm, setShowMobileForm] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+      // Auto-show mobile form on iPhone 16 and similar screens
+      setShowMobileForm(window.innerWidth <= 428 && window.innerHeight >= 800)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // iPhone 16 optimized experience
+  if (showMobileForm) {
+    return <MobileOptimizedContactForm variant="default" showDecorations={true} autoFocus={true} />
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 pt-24">
       <div className="container mx-auto px-4 py-16">
@@ -23,6 +44,31 @@ export default function ContactPage() {
             Transform your space with a stunning aquascape that combines artistry with nature. 
             Our expert team specializes in creating underwater masterpieces that captivate and inspire.
           </p>
+
+          {/* Mobile/Desktop Form Toggle (for tablet/small desktop) */}
+          {isMobile && !showMobileForm && (
+            <div className="mb-8">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-gray-200 shadow-lg">
+                <p className="text-sm text-gray-700 mb-4">Choose your preferred contact experience:</p>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowMobileForm(true)}
+                    className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-medium hover:from-cyan-600 hover:to-blue-600 transition-all"
+                  >
+                    <Smartphone className="w-4 h-4" />
+                    Mobile Form
+                  </button>
+                  <button
+                    onClick={() => setShowMobileForm(false)}
+                    className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all"
+                  >
+                    <Monitor className="w-4 h-4" />
+                    Desktop View
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Contact Information */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
