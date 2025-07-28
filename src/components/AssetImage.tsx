@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { AssetItem, getAssetsByTheme, getRandomAssets } from '@/data/assets'
 
 interface AssetImageProps {
@@ -13,6 +14,7 @@ interface AssetImageProps {
   showCredit?: boolean
   overlay?: boolean
   overlayOpacity?: number
+  sizes?: string
 }
 
 export function AssetImage({
@@ -24,7 +26,8 @@ export function AssetImage({
   priority = false,
   showCredit = true,
   overlay = false,
-  overlayOpacity = 0.3
+  overlayOpacity = 0.3,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 }: AssetImageProps) {
   const [selectedAsset, setSelectedAsset] = useState<AssetItem | null>(null)
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -76,20 +79,35 @@ export function AssetImage({
     setImageLoaded(false)
   }
 
+  // Convert aspect ratio to width/height for Next.js Image
+  const getImageDimensions = () => {
+    switch (aspectRatio) {
+      case '16:9': return { width: 1600, height: 900 }
+      case '4:3': return { width: 1200, height: 900 }
+      case '1:1': return { width: 1000, height: 1000 }
+      case '3:2': return { width: 1200, height: 800 }
+      default: return { width: 1600, height: 900 }
+    }
+  }
+
   return (
     <div className={`relative overflow-hidden rounded-lg ${getAspectRatioClass()} ${className}`}>
       {selectedAsset && !imageError ? (
         <>
           {/* Main Image */}
-          <img
+          <Image
             src={selectedAsset.url}
             alt={selectedAsset.title}
+            {...getImageDimensions()}
             className={`w-full h-full object-cover transition-opacity duration-500 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             onLoad={handleImageLoad}
             onError={handleImageError}
-            loading={priority ? 'eager' : 'lazy'}
+            priority={priority}
+            sizes={sizes}
+            quality={85}
+            unoptimized={true}
           />
           
           {/* Loading placeholder */}
@@ -146,6 +164,7 @@ export function HeroAssetImage({ themeId, className }: { themeId?: string; class
       overlay={true}
       overlayOpacity={0.4}
       fallbackColor="from-cyan-200 via-blue-200 to-teal-200"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
     />
   )
 }
@@ -159,6 +178,7 @@ export function ProductAssetImage({ themeId, className }: { themeId?: string; cl
       aspectRatio="4:3"
       showCredit={false}
       fallbackColor="from-gray-100 to-gray-200"
+      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
     />
   )
 }
@@ -172,6 +192,7 @@ export function PlantAssetImage({ themeId, className }: { themeId?: string; clas
       aspectRatio="1:1"
       showCredit={false}
       fallbackColor="from-green-100 to-emerald-200"
+      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
     />
   )
 }
@@ -186,6 +207,7 @@ export function AquariumAssetImage({ themeId, className }: { themeId?: string; c
       overlay={true}
       overlayOpacity={0.2}
       fallbackColor="from-blue-100 via-cyan-100 to-teal-100"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
     />
   )
 }
