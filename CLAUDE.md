@@ -1,10 +1,8 @@
-# CLAUDE.md
+# AquaScene - Main Platform AI Agent Guide
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 🎯 Project Overview
 
-## Project Overview
-
-AquaScene is a professional aquascaping business showcase website built with Next.js, React, TypeScript, and Tailwind CSS. The project demonstrates multiple design themes for different target audiences, featuring premium aquascaping products, services, and partnerships.
+AquaScene is the flagship aquascaping platform featuring 15 dynamic themes, with the revolutionary Timeline theme providing an interactive aquarium building experience. Built to demonstrate technical excellence to Green Aqua Hungary and establish authority in the Bulgarian aquascaping market.
 
 ## Project Status - COMPLETED CORE FEATURES ✅
 
